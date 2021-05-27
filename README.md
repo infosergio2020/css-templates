@@ -15,7 +15,7 @@
       <li>index.html</li>
     </ul>
   </p>
-  
+  <p>asi que para visualizar el contenido puedes correrlo, abriendo el .html en cualquier browser</p>
   
   
 </div>
