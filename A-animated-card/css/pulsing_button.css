@@ -1,0 +1,137 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+:root{
+    --clr-dark: rgb(13, 17, 19);
+    --clr-light: #fff;
+    --clr-accent: rgb(222, 52, 0);
+    --clr-accent-dark: rgb(163, 38, 0);
+    --clr-secondary: rgb(0, 76, 199);
+
+    --br: .5em;
+}
+
+
+body{
+    font-family: sans-serif;
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    background-color: var(--clr-dark);
+    color: var(--clr-light);
+}
+
+h1,
+h2,
+h3,
+p{
+    margin: 0;
+}
+
+img{
+    max-width: 100%;
+}
+
+
+/* PLATILLA PARA TRABAJAR SOBRE LA ANIMAICON DE PULSO DL BOTON */
+
+/* hacemos mas gruesa la fuente del titulo */
+.name{
+    font-weight: bold;
+}
+
+/* establecemos flexbox y centramos los textos de los elementos hijos (titulo y stats) */
+.streamers{
+    display: flex;
+    text-align: center;
+}
+
+/* le decimos a la imagen que ocupe todo el espacio y que sea circular*/
+.streamers img {
+        width: 100%;
+        border-radius: 50%;
+}
+
+/* limitamos tamaño del contenedor de la imagen*/
+/* ademas establecemos una referencia de posicion 
+para que otros la puedan usar*/
+.icon {
+    width: 10em;
+    height: 10em;
+    position: relative;
+    transition: transform 150ms ease-in-out;
+}
+
+/* efecto de desplazamiento haci arriba y escalado de boton */
+.streamer:hover .icon{
+    transform: translateY(-20%);
+}
+
+.streamer:hover .icon::before{
+    opacity: 1;
+}
+
+.streamer .icon:hover{
+    transform: scale(1.1) translateY(-20%);
+}
+
+
+/* le decimos a los pseudo elemetos de icon que tienen todo el alto y ancho disponible */
+/* ademas hacemos que ocupe todo el contenedor icon */
+.icon::before,
+.icon::after {
+    opacity: 0;
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: 50%;
+    
+}
+
+/* en el before creamos elefecto del boton rojo */
+.icon::before{
+    content: "\f04b";
+    font-family: "Font awesome 5 free";
+    font-size: 2rem;
+    font-weight: 900; 
+    background-color: #f00;
+    display: grid;
+    place-items: center;
+    z-index: 10;
+    transition: opacity 75ms linear,
+                background-color 150ms linear;
+}
+
+.icon:hover::before{
+    background-color: #cc0202;
+}
+
+
+/* armamos el efecto de la pulzacion */
+/* esto solo ocurre si me desplazo sobre el */
+.icon:hover:after {
+    background: #f00;
+    z-index: 1;
+    animation: pulse 1250ms infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.95);
+        opacity: 0.75;
+    }
+
+    100% {
+        transform: scale(1.35);
+        opacity: 0;
+    }
+}
