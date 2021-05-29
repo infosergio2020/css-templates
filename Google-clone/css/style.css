@@ -1,0 +1,147 @@
+html {
+    box-sizing: border-box;
+    font-size: 62.5%; /* Now 10px = 1rem! */
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+  
+  body {
+    height: 100vh;
+    font-family: sans-serif;
+    font-size: 16px; /* px fallback */
+    font-size: 1.6rem; /* default font-size for document */
+    line-height: 1.5; /* a nice line-height */
+  }
+
+a{
+    color: #535353;
+    text-decoration: none;
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+.navegacion{
+   display: flex;
+   justify-content: flex-end;
+   align-items: center;
+}
+
+.link-list{
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+.link-list li{
+    margin-right: 2rem;
+}
+
+.panel-tools{
+    margin-right: 1.5rem;
+    position: relative;
+}
+
+.banner{
+    margin: 4rem 0;
+    display: flex;
+    justify-content: center;
+}
+
+
+.buscador{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+.form-container{
+    gap: 1rem;
+    display: flex;
+    align-items: center;
+    border: 1px solid rgba(122, 122, 122, 0.596);
+    border-radius: 5rem;
+    padding: 0 1.6rem;
+}
+
+.form-container:hover {
+    background-color: #fff;
+    box-shadow: 0 1px 6px rgb(32 33 36 / 28%);
+    border-color: rgba(223,225,229,0);
+}
+
+.form-find input{
+    width: 35rem;
+    height: 3rem;
+    border: none;
+}
+
+
+.form-find input:focus{
+    outline: none;
+}
+
+.icon-find{
+    margin-top: .5rem;
+}
+
+.audio-find{
+    margin: .5rem 0 0 0;
+}
+
+
+.botones-finder{
+    margin-top: 4rem;
+}
+
+.grupo-boton button{
+    padding: .8rem 1.6rem;
+}
+
+.grupo-boton button:nth-child(1){
+    margin-right: 4rem;
+}
+
+
+.btn{
+    text-decoration: none;
+    display: inline-block;
+    color: #ebebeb;
+    padding: 0.5rem 1rem;
+    border-radius: .5rem;
+    transition: background-color 250ms ease-in-out,
+                color 250ms ease-in-out;
+}
+
+.btn:hover{
+    background-color: #4487df;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.btn:focus:focus-within{
+    border: 1px solid #525252;
+    transform: scale(.9);
+}
+
+.btn-blue{
+    background-color: #1a73e8;
+}
+
+.btn-a-little-white{
+    background-color: #F8F9FA;
+    border: 1px solid #f8f9fa;
+    border-radius: .5rem;
+    transition: border 250ms ease;
+}
+
+.btn-a-little-white:hover, .btn-a-little-white:focus{
+    box-shadow: 0 1px 1px rgb(0 0 0 / 10%);
+    background-color: #f8f9fa;
+    border: 1px solid #dadce0;
+    color: #202124;
+}
